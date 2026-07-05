@@ -1067,8 +1067,13 @@ video {
 
 @media (max-width: 1080px) {
   .site-header {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     padding: 12px 24px;
+  }
+
+  .brand {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .main-nav {
@@ -1123,6 +1128,8 @@ video {
 
   .menu-toggle {
     display: inline-flex;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .business-grid,
@@ -1261,16 +1268,29 @@ video {
   }
 
   .overview-row {
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 10px 14px;
+    align-items: start;
+  }
+
+  .overview-row .row-number {
+    grid-column: 1 / -1;
   }
 
   .overview-row .icon-badge {
-    grid-row: span 2;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .overview-row > div {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
   }
 
   .overview-row button {
     grid-column: 2;
+    grid-row: 3;
     width: fit-content;
   }
 
